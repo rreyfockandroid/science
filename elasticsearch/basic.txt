@@ -31,12 +31,30 @@ curl -XPUT 'http://localhost:9200/bikes/element/2' -H'Content-Type: application/
     "body": "body aaaaaaaaaaaaaaaaaaaaaaaaaaaaa" ,
     "title": "title aaaaaaaaaaaa"
 }'
-
+curl -XPUT 'http://localhost:9200/bikes/element/3' -H'Content-Type: application/json' -d '
+{
+    "name": "Cannondale Jekyll",
+    "addDate": "2018-11-22",
+    "body": "Jeden z najlepszych rowerow swiata" ,
+    "title": "Jekyll 2003"
+}'
+curl -XPUT 'http://localhost:9200/bikes/element/4' -H'Content-Type: application/json' -d '
+{
+    "name": "Santa Cruze",
+    "addDate": "2018-11-22",
+    "body": "Jeden z najlepszych rowerow swiata" ,
+    "title": "Bike Santa Cruze"
+}'
 # get/find data
 curl -XGET 'http://localhost:9200/bikes/element/1?pretty=true'
 curl 'http://localhost:9200/bikes/element/_search?&pretty=true'
 curl 'http://localhost:9200/bikes/element/_search?q=name=Kona&pretty=true'
+curl -XGET 'http://localhost:9200/bikes/element/_search?pretty=true' -H'Content-Type: application/json' -d '
+{
+    "query": {
+			"term": {"body":"body"}
+		}
+}'
 
 
 http://www.elasticsearchtutorial.com/elasticsearch-in-5-minutes.html
-
