@@ -58,3 +58,18 @@ curl -XGET 'http://localhost:9200/bikes/element/_search?pretty=true' -H'Content-
 
 
 http://www.elasticsearchtutorial.com/elasticsearch-in-5-minutes.html
+
+
+###
+dodane dane przez kibane do elasticsearch-a
+curl 'http://localhost:9200/kibana_sample_data_ecommerce/_search?&pretty=true'
+
+GET /kibana_sample_data_ecommerce/_search
+{
+  "from": 0, "size":1,
+  "query":{
+    "term": {
+      "day_of_week":"Monday"
+    }
+  }
+}
