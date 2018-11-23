@@ -19,7 +19,7 @@ curl -XPUT 'http://localhost:9200/bikes/element/1' -H'Content-Type: application/
 		"dh": 1,
 		"all_montain": 0
     }
-}'
+}';
 curl -XPUT 'http://localhost:9200/bikes/element/2' -H'Content-Type: application/json' -d '
 {
     "name": "Cannondale",
@@ -32,7 +32,7 @@ curl -XPUT 'http://localhost:9200/bikes/element/2' -H'Content-Type: application/
 		"dh": 0,
 		"all_montain": 1
     }
-}'
+}';
 curl -XPUT 'http://localhost:9200/bikes/element/3' -H'Content-Type: application/json' -d '
 {
     "name": "Cannondale Jekyll",
@@ -45,7 +45,7 @@ curl -XPUT 'http://localhost:9200/bikes/element/3' -H'Content-Type: application/
 		"dh": 0,
 		"all_montain": 1
     }
-}'
+}';
 curl -XPUT 'http://localhost:9200/bikes/element/4' -H'Content-Type: application/json' -d '
 {
     "name": "Santa Cruze",
@@ -58,7 +58,7 @@ curl -XPUT 'http://localhost:9200/bikes/element/4' -H'Content-Type: application/
 		"dh": 0,
 		"all_montain": 1
     }
-}'
+}';
 curl -XPUT 'http://localhost:9200/bikes/element/5' -H'Content-Type: application/json' -d '
 {
     "name": "Santa Cruze",
@@ -71,6 +71,6 @@ curl -XPUT 'http://localhost:9200/bikes/element/5' -H'Content-Type: application/
 		"dh": 0,
 		"all_montain": 1
     }
-}'
+}';
 
 
