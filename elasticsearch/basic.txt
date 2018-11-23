@@ -73,3 +73,5 @@ GET /kibana_sample_data_ecommerce/_search
     }
   }
 }
+
+curl -XGET  'http://localhost:9200/bikes/_search' | jq .hits.hits | jq .[]._source.name
