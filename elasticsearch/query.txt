@@ -11,6 +11,9 @@ curl -XGET 'http://localhost:9200/bikes/element/_search?pretty=true' -H'Content-
 
 # jq
 curl -XGET  'http://localhost:9200/bikes/_search' | jq .hits.hits | jq .[]._source.name
+curl 'http://localhost:9200/bikes/_search?pretty=true' | jq .hits.hits | jq '.[]._source.name, .[]._source.destination'
+curl 'http://localhost:9200/bikes/_search?pretty=true' | jq .hits.hits | jq '.[]._source | "NAME: \(.name) DEST:\(.destination)"'
+
 
 ###
 dodane dane przez kibane do elasticsearch-a
