@@ -1,0 +1,76 @@
+docker pull docker.elastic.co/elasticsearch/elasticsearch:6.5.1
+docker run -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.5.1
+
+http://www.elasticsearchtutorial.com/elasticsearch-in-5-minutes.html
+
+# show idexes
+http://localhost:9200/_cat/indices?v
+
+#add data
+curl -XPUT 'http://localhost:9200/bikes/element/1' -H'Content-Type: application/json' -d '
+{
+    "name": "Kona",
+    "addDate": "2018-11-22",
+    "body": "body aaaaaaaaaaaaaaaaaaaaaaaaaaaaa" ,
+    "title": "title aaaaaaaaaaaa",
+    "destination": {
+		"fr": 1,
+		"xc": 0,
+		"dh": 1,
+		"all_montain": 0
+    }
+}'
+curl -XPUT 'http://localhost:9200/bikes/element/2' -H'Content-Type: application/json' -d '
+{
+    "name": "Cannondale",
+    "addDate": "2018-11-22",
+    "body": "body aaaaaaaaaaaaaaaaaaaaaaaaaaaaa" ,
+    "title": "title aaaaaaaaaaaa",
+    "destination": {
+		"fr": 0,
+		"xc": 1,
+		"dh": 0,
+		"all_montain": 1
+    }
+}'
+curl -XPUT 'http://localhost:9200/bikes/element/3' -H'Content-Type: application/json' -d '
+{
+    "name": "Cannondale Jekyll",
+    "addDate": "2018-11-22",
+    "body": "Jeden z najlepszych rowerow swiata" ,
+    "title": "Jekyll 2003",
+    "destination": {
+		"fr": 0,
+		"xc": 1,
+		"dh": 0,
+		"all_montain": 1
+    }
+}'
+curl -XPUT 'http://localhost:9200/bikes/element/4' -H'Content-Type: application/json' -d '
+{
+    "name": "Santa Cruze",
+    "addDate": "2018-11-22",
+    "body": "Jeden z najlepszych rowerow swiata" ,
+    "title": "Bike Santa Cruze",
+    "destination": {
+		"fr": 1,
+		"xc": 0,
+		"dh": 0,
+		"all_montain": 1
+    }
+}'
+curl -XPUT 'http://localhost:9200/bikes/element/5' -H'Content-Type: application/json' -d '
+{
+    "name": "Santa Cruze",
+    "addDate": "2018-11-22",
+    "body": "Jeden z najlepszych rowerow swiata" ,
+    "title": "Rocky Montain",
+    "destination": {
+		"fr": 1,
+		"xc": 0,
+		"dh": 0,
+		"all_montain": 1
+    }
+}'
+
+
