@@ -5,7 +5,7 @@ import (
 	"time"
 )
 const ( 
-	stime = time.Second * 5
+	stime = time.Second * 0
 	sizeInit = 10000
 	text = "text"
 )
@@ -40,19 +40,21 @@ func add1(s Stack) {
 	for i := 0; i < sizeInit; i++ {
 		s.Push(fmt.Sprintf("ala__1_%s_%d", text, i))
 	}
+	fmt.Printf("\nadd1 size=%d", s.Len())
 }
 
 func add2(s *Stack) {
 	for i := 0; i < sizeInit; i++ {
 		s.Push(fmt.Sprintf("ala__2_%s_%d", text, i))
 	}
+	fmt.Printf("\nadd2 size=%d", s.Len())
 }
 
 func main() {
 	p := fmt.Printf
 	p("\nstart")
 	
-	f1()
+	f2()
 	p("\nsleep")
 	time.Sleep(stime)
 	p("\nend")
@@ -62,9 +64,10 @@ func f2() {
 	p := fmt.Printf	
 	s := &Stack{}
 	p("\nLen: %d", s.Len())
-	
-		//add1(*s)
-		add2(s)
+	for i := 0; i < 3; i++ {
+		add1(*s)
+		//add2(s)
+	}
 	
 	
 	p("\nLen: %d", s.Len())
