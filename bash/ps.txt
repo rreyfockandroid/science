@@ -1,0 +1,1 @@
+ps afux | awk '{$5=int($5/1024)"M";}{ print;}'
