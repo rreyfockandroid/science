@@ -29,4 +29,9 @@ GET /kibana_sample_data_ecommerce/_search
   }
 }
 
+###  usuniecie indexu
+curl -XDELETE 'http://localhost:9200/bikes'
+
+### liczba dokumentow w indexie
+curl -XGET 'http://localhost:9200/bikes/_doc/_count'
 

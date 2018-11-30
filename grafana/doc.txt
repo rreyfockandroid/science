@@ -1,0 +1,15 @@
+http://docs.grafana.org/installation/docker/
+docker run -d -p 3000:3000 --name=grafana -e "GF_SERVER_ROOT_URL=http://grafana.server.name" -e "GF_SECURITY_ADMIN_PASSWORD=secret" grafana/grafana
+
+https://github.com/hopsoft/docker-graphite-statsd
+docker run -d --name graphite --restart=always -p 80:80 -p 2003-2004:2003-2004 -p 2023-2024:2023-2024 -p 8125:8125/udp -p 8126:8126 hopsoft/graphite-statsd
+
+
+while true; do echo -n "example:$((RANDOM % 100))|c" | nc -w 1 -u 127.0.0.1 8125; done
+
+#grafana
+http://localhost:3000/?orgId=1
+
+#graphite
+http://localhost:80
+Konfiguracja URL:http://localhost:80 ACCESS:Browser

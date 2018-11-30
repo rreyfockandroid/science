@@ -1,0 +1,1 @@
+d="2018-11-";for i in `seq 10 30`; do size=`zcat $d$i.log.gz | grep 'Partial trial' | wc -l`; echo "$size $d$i";done;
