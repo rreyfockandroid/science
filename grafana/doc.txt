@@ -13,3 +13,5 @@ http://localhost:3000/?orgId=1
 #graphite
 http://localhost:80
 Konfiguracja URL:http://localhost:80 ACCESS:Browser
+
+
