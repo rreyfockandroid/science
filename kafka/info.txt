@@ -1,0 +1,9 @@
+# pisze do kafki
+./kafka-console-producer.sh --broker-list node-1.kafka-2.dc-2.tools.dcwp.pl:9092 --topic adv.audit
+
+# czyta z kafki
+./kafka-console-consumer.sh --bootstrap-server node-1.kafka-2.dc-2.tools.dcwp.pl:9092 --topic adv.audit --from-beginning
+
+# servery kafki
+echo $KAFKAT_SERVER 
+node-1.kafka-1.dc-2.tools.dcwp.pl:9092,node-1.kafka-2.dc-2.tools.dcwp.pl:9092,node-1.kafka-3.dc-2.tools.dcwp.pl:9092
