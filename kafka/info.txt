@@ -1,9 +1,19 @@
 # pisze do kafki
-./kafka-console-producer.sh --broker-list node-1.kafka-2.dc-2.tools.dcwp.pl:9092 --topic adv.audit
+./kafka-console-producer.sh --broker-list __NAMIAR__:9092 --topic adv.audit
 
 # czyta z kafki
-./kafka-console-consumer.sh --bootstrap-server node-1.kafka-2.dc-2.tools.dcwp.pl:9092 --topic adv.audit --from-beginning
+./kafka-console-consumer.sh --bootstrap-server __NAMIAR__:9092 --topic adv.audit --from-beginning
 
-# servery kafki
-echo $KAFKAT_SERVER 
-node-1.kafka-1.dc-2.tools.dcwp.pl:9092,node-1.kafka-2.dc-2.tools.dcwp.pl:9092,node-1.kafka-3.dc-2.tools.dcwp.pl:9092
+
+/share_home/apps/kafka/bin/kafka-console-consumer.sh --bootstrap-server __NAMIAR__:9092 --topic adv.audit-dc2
+/share_home/apps/kafka/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test
+/share_home/apps/kafka/bin/kafka-topics.sh --zookeeper __NAMIAR__ --list
+ /share_home/apps/kafka/bin/kafka-topics.sh --zookeeper __NAMIAR__:2181 --list
+/share_home/apps/kafka/bin/kafka-console-consumer.sh --bootstrap-server  __NAMIAR__:9092 --topic adv.audit-dc2 --new-consumer --from-beginning --max-messages 42
+
+
+# klucze wiadomosci
+/share_home/apps/kafka/bin/kafka-console-consumer.sh --bootstrap-server __NAMIAR__:9092 --topic dot.i-json-dot --property print.key=true
+
+
+
